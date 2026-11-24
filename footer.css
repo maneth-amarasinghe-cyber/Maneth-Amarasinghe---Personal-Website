@@ -1,0 +1,58 @@
+/* footer.css - link this AFTER style.css on every page.
+   Social icon buttons, site footer, and the featured Thaari project card. */
+
+/* ---------- Social icon buttons ---------- */
+.social-row{display:flex;flex-wrap:wrap;gap:12px;margin:1.6rem 0 0;padding:0;list-style:none}
+.social-btn{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:#fff;border:1.5px solid var(--line);color:var(--forest);transition:background .2s,border-color .2s,color .2s,transform .2s}
+.social-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.social-btn:hover,.social-btn:focus-visible{background:var(--forest);border-color:var(--forest);color:#fff;transform:translateY(-2px)}
+
+/* ---------- Footer (deep green) ---------- */
+.tf-footer{background:var(--deep);color:#b9d1c3;margin-top:clamp(2.5rem,6vw,4.5rem);padding:56px 0 0;font-size:.97rem}
+.tf-wrap{width:calc(100% - 2.5rem);max-width:1120px;margin:0 auto}
+.tf-grid{display:grid;grid-template-columns:1.4fr 1fr 1.1fr;gap:48px;padding-bottom:40px}
+.tf-brand{display:flex;align-items:center;gap:12px;color:#fff;font:700 1.2rem var(--head);text-decoration:none}
+.tf-brand img{width:60px;height:auto;display:block;background:#fff;border-radius:12px;padding:5px}
+.tf-about{margin:16px 0 0;max-width:36ch;line-height:1.7}
+.tf-footer h3{margin:0 0 16px;color:#fff;font-size:1.05rem}
+.tf-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.tf-footer ul.social-row{display:flex;gap:12px;margin-top:1.6rem}
+.tf-footer a{color:#b9d1c3;text-decoration:none;transition:color .2s}
+.tf-footer a:hover,.tf-footer a:focus-visible{color:#fff;text-decoration:underline}
+.tf-footer .social-btn{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18);color:#e6f4ea}
+.tf-footer .social-btn:hover,.tf-footer .social-btn:focus-visible{background:var(--mint);border-color:var(--mint);color:var(--deep);text-decoration:none}
+.tf-footer :focus-visible{outline-color:#fff}
+.tf-bottom{border-top:1px solid rgba(255,255,255,.12);padding:22px 0;display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;font-size:.9rem}
+.tf-bottom p{margin:0}
+@media(max-width:820px){.tf-grid{grid-template-columns:1fr 1fr;gap:36px}.tf-grid>div:first-child{grid-column:1/-1}}
+@media(max-width:520px){.tf-grid{grid-template-columns:1fr}.tf-bottom{flex-direction:column}}
+
+/* ---------- Featured project (Thaari) ---------- */
+.feature{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(1.2rem,3vw,2.6rem);align-items:center;margin-bottom:1.5rem;padding:clamp(1.2rem,3vw,2.2rem);background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:0 22px 50px rgba(15,47,32,.10)}
+.feature-visual{background:var(--mist);border:1px solid var(--line);border-radius:20px;padding:clamp(1.5rem,4vw,3rem);display:grid;place-items:center;min-height:260px}
+.feature-logo{width:100%;max-width:380px;height:auto;display:block}
+.feature-eyebrow{margin:0 0 .6rem;color:var(--forest);font-weight:700;font-size:.98rem}
+.feature h3{margin:0 0 .8rem;font-size:clamp(1.5rem,3vw,2rem)}
+.feature-lead{margin:0 0 1.2rem;font-size:1.05rem}
+.checks{list-style:none;margin:0 0 1.4rem;padding:0;display:grid;gap:.85rem}
+.checks li{position:relative;padding-left:2.2rem}
+.checks li::before{content:"\2713";position:absolute;left:0;top:.1rem;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--mint);color:var(--forest);font-size:.85rem;font-weight:700;display:grid;place-items:center}
+.feature-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem 1.2rem;border-top:1px solid var(--line);padding-top:1.2rem}
+.pill{background:var(--mist);border:1px solid var(--line);border-radius:999px;padding:.5rem 1.1rem;color:var(--ink);font-weight:600}
+.feature-link{color:var(--forest);font-weight:700;text-decoration:none}
+.feature-link:hover{text-decoration:underline}
+@media(max-width:860px){.feature{grid-template-columns:1fr}.feature-visual{min-height:0}}
+
+/* ---------- Shared hover border (project cards, Thaari feature, contact cards) ---------- */
+article.hcard{border:2px solid transparent;-webkit-tap-highlight-color:transparent;
+  background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#bfe0cc,#e7f5ec 55%,#bfe0cc) border-box;
+  transition:box-shadow .25s,transform .25s}
+article.hcard:hover,article.hcard:focus-within,article.hcard:active,article.hcard.selected{border-color:transparent;
+  background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#2f9e6b,#0e7490 55%,#166534) border-box;
+  box-shadow:0 0 0 4px rgba(47,158,107,.16),0 18px 38px rgba(15,47,32,.14)}
+article.hcard.selected{transform:translateY(-3px)}
+
+/* ---------- Contact: green icon in place of the heading ---------- */
+.ci{margin:0 0 1rem}
+.cicon{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:16px;background:var(--mint);color:var(--forest)}
+.cicon svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
